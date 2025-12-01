@@ -19,6 +19,7 @@ extension MaintenanceRequest {
     @NSManaged public var requestDescription: String?
     @NSManaged public var category: String? // Plumbing, HVAC, Electrical, Appliance, Other
     @NSManaged public var urgency: String? // Low, Medium, High, Critical
+    @NSManaged public var priority: String? // Low, Medium, High
     @NSManaged public var status: String? // Submitted, Assigned, In Progress, Completed, Cancelled
     @NSManaged public var submittedDate: Date?
     @NSManaged public var scheduledDate: Date?

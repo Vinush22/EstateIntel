@@ -16,6 +16,7 @@ extension Inspection {
     
     @NSManaged public var id: UUID?
     @NSManaged public var inspectionType: String? // Move-In, Move-Out, Routine, Emergency
+    @NSManaged public var status: String? // Scheduled, In Progress, Completed
     @NSManaged public var inspectionDate: Date?
     @NSManaged public var inspectorName: String?
     @NSManaged public var overallCondition: String? // Excellent, Good, Fair, Poor
