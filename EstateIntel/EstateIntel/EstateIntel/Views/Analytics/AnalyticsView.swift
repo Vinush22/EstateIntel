@@ -37,7 +37,7 @@ struct AnalyticsView: View {
                     case .vacancy:
                         VacancyAnalyticsView()
                     case .energy:
-                        energyAnalyticsView()
+                        EnergyAnalyticsView()
                     case .pricing:
                         PricingAnalyticsView()
                     case .risk:
