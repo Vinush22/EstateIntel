@@ -27,7 +27,7 @@ struct DashboardView: View {
                         
                         Text("AI-Powered Property Management")
                             .font(.subheadline)
-                            .foregroundColor(.secondary)
+                            .foreground Color(.secondary)
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.horizontal)

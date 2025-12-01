@@ -236,7 +236,7 @@ class SatisfactionPredictionService {
         } else {
             score = 0
             impact = .neutral
-            description = "Average issue resolution"
+            description: "Average issue resolution"
         }
         
         return Factor(category: "Issue Resolution", impact: impact, score: score, description: description)

@@ -62,7 +62,7 @@ struct DocumentCenterView: View {
                             // Confidence Score
                             VStack(alignment: .leading, spacing: 8) {
                                 HStack {
-                                    Text("Extraction Confidence")
+                                    Text("Extraction Confidence"
                                     Spacer()
                                     Text("\(Int(result.confidence * 100))%")
                                         .fontWeight(.bold)

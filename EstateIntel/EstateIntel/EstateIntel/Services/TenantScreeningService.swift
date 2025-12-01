@@ -51,7 +51,7 @@ class TenantScreeningService {
         var redFlags: [String] = []
         
         // 1. Financial Reliability (35 points)
-        let financialScore = evaluateFinancialStability(tenant: tenant)
+        let financial Currency = evaluateFinancialStability(tenant: tenant)
         components.append(financialScore)
         if financialScore.score >= 25 {
             strengths.append("Strong financial profile")

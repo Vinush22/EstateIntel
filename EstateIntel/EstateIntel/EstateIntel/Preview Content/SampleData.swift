@@ -104,55 +104,6 @@ struct SampleData {
                     
                     tenant.addToPayments(payment)
                 }
-
-                
-                // Create sample maintenance requests
-                for j in 1...3 {
-                    let request = MaintenanceRequest(context: context)
-                    request.id = UUID()
-                    request.title = ["Leaky Faucet", "Broken AC", "Window Stuck"][j-1]
-                    request.requestDescription = "Issue reported by tenant"
-                    request.status = ["Completed", "In Progress", "Pending"][j-1]
-                    request.priority = ["Low", "High", "Medium"][j-1]
-                    request.submittedDate = Calendar.current.date(byAdding: .day, value: -j*10, to: Date())
-                    if request.status == "Completed" {
-                        request.completedDate = Calendar.current.date(byAdding: .day, value: -j*10 + 2, to: Date())
-                    }
-                    request.category = ["Plumbing", "HVAC", "Structural"][j-1]
-                    request.createdAt = request.submittedDate
-                    
-                    tenant.addToMaintenanceRequests(request)
-                    unit.addToMaintenanceRequests(request)
-                }
-                
-                // Create sample documents
-                let docTypes = ["Lease Agreement", "ID", "PayStub"]
-                for (index, type) in docTypes.enumerated() {
-                    let doc = Document(context: context)
-                    doc.id = UUID()
-                    doc.name = "\(tenant.lastName ?? "Tenant") - \(type)"
-                    doc.documentType = type
-                    doc.uploadDate = Calendar.current.date(byAdding: .month, value: -6, to: Date())
-                    doc.extractionConfidence = Double.random(in: 0.8...0.99)
-                    doc.isVerified = true
-                    doc.createdAt = doc.uploadDate
-                    
-                    tenant.addToDocuments(doc)
-                }
-            }
-            
-            // Create sample inspections
-            for k in 1...2 {
-                let inspection = Inspection(context: context)
-                inspection.id = UUID()
-                inspection.inspectionDate = Calendar.current.date(byAdding: .month, value: -k*6, to: Date())
-                inspection.inspectorName = "Alex Inspector"
-                inspection.overallCondition = k == 1 ? "Good" : "Excellent"
-                inspection.notes = "Routine inspection"
-                inspection.status = "Completed"
-                inspection.createdAt = inspection.inspectionDate
-                
-                unit.addToInspections(inspection)
             }
         }
         
