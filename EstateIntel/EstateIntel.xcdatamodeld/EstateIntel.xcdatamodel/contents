@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A1001" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Document" representedClassName="Document" syncable="YES" codeGenerationType="class">
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="documentAuthenticity" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="documentType" optional="YES" attributeType="String"/>
+        <attribute name="extractedDataJSON" optional="YES" attributeType="String"/>
+        <attribute name="extractionConfidence" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="fileName" optional="YES" attributeType="String"/>
+        <attribute name="fileURL" optional="YES" attributeType="String"/>
+        <attribute name="fraudFlags" optional="YES" attributeType="String"/>
+        <attribute name="fraudRiskScore" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="isVerified" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="ocrText" optional="YES" attributeType="String"/>
+        <attribute name="scanDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="uploadDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="validationIssues" optional="YES" attributeType="String"/>
+        <attribute name="validationStatus" optional="YES" attributeType="String"/>
+        <relationship name="tenant" optional="YES" minCount="0" maxCount="1" deletionRule="Nullify" destinationEntity="Tenant" inverseName="documents" inverseEntity="Tenant"/>
+    </entity>
+    <entity name="Inspection" representedClassName="Inspection" syncable="YES" codeGenerationType="class">
+        <attribute name="aiDetectedDamages" optional="YES" attributeType="String"/>
+        <attribute name="changesDetected" optional="YES" attributeType="String"/>
+        <attribute name="comparisonInspectionID" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="damageCount" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="estimatedRepairCost" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="imageURLs" optional="YES" attributeType="String"/>
+        <attribute name="inspectionDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="inspectionType" optional="YES" attributeType="String"/>
+        <attribute name="inspectorName" optional="YES" attributeType="String"/>
+        <attribute name="notes" optional="YES" attributeType="String"/>
+        <attribute name="overallCondition" optional="YES" attributeType="String"/>
+        <attribute name="status" optional="YES" attributeType="String"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="videoURLs" optional="YES" attributeType="String"/>
+        <relationship name="unit" optional="YES" minCount="0" maxCount="1" deletionRule="Nullify" destinationEntity="Unit" inverseName="inspections" inverseEntity="Unit"/>
+    </entity>
+    <entity name="MaintenanceLog" representedClassName="MaintenanceLog" syncable="YES" codeGenerationType="class">
+        <attribute name="contractorName" optional="YES" attributeType="String"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="downtime" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="equipmentID" optional="YES" attributeType="String"/>
+        <attribute name="equipmentType" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="issueDescription" optional="YES" attributeType="String"/>
+        <attribute name="issueType" optional="YES" attributeType="String"/>
+        <attribute name="notes" optional="YES" attributeType="String"/>
+        <attribute name="partsReplaced" optional="YES" attributeType="String"/>
+        <attribute name="preventiveMaintenance" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="repairCost" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="repairDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="season" optional="YES" attributeType="String"/>
+        <attribute name="severity" optional="YES" attributeType="String"/>
+        <relationship name="property" optional="YES" minCount="0" maxCount="1" deletionRule="Nullify" destinationEntity="Property" inverseName="maintenanceLogs" inverseEntity="Property"/>
+    </entity>
+    <entity name="MaintenanceRequest" representedClassName="MaintenanceRequest" syncable="YES" codeGenerationType="class">
+        <attribute name="actualCost" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="aiClassificationConfidence" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="aiDetectedIssues" optional="YES" attributeType="String"/>
+        <attribute name="aiSuggestedCategory" optional="YES" attributeType="String"/>
+        <attribute name="aiUrgencyScore" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="assignedContractor" optional="YES" attributeType="String"/>
+        <attribute name="category" optional="YES" attributeType="String"/>
+        <attribute name="completedDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="contractorPhone" optional="YES" attributeType="String"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="estimatedCost" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="imageURLs" optional="YES" attributeType="String"/>
+        <attribute name="priority" optional="YES" attributeType="String"/>
+        <attribute name="requestDescription" optional="YES" attributeType="String"/>
+        <attribute name="scheduledDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="status" optional="YES" attributeType="String"/>
+        <attribute name="submittedDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="urgency" optional="YES" attributeType="String"/>
+        <attribute name="videoURL" optional="YES" attributeType="String"/>
+        <relationship name="tenant" optional="YES" minCount="0" maxCount="1" deletionRule="Nullify" destinationEntity="Tenant" inverseName="maintenanceRequests" inverseEntity="Tenant"/>
+        <relationship name="unit" optional="YES" minCount="0" maxCount="1" deletionRule="Nullify" destinationEntity="Unit" inverseName="maintenanceRequests" inverseEntity="Unit"/>
+    </entity>
+    <entity name="Message" representedClassName="Message" syncable="YES" codeGenerationType="class">
+        <attribute name="aiSuggestedReply" optional="YES" attributeType="String"/>
+        <attribute name="content" optional="YES" attributeType="String"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="detectedTopics" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="isRead" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="requiresAttention" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="sender" optional="YES" attributeType="String"/>
+        <attribute name="senderName" optional="YES" attributeType="String"/>
+        <attribute name="sentiment" optional="YES" attributeType="String"/>
+        <attribute name="sentimentScore" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="subject" optional="YES" attributeType="String"/>
+        <attribute name="threadID" optional="YES" attributeType="String"/>
+        <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="urgencyLevel" optional="YES" attributeType="String"/>
+        <relationship name="tenant" optional="YES" minCount="0" maxCount="1" deletionRule="Nullify" destinationEntity="Tenant" inverseName="messages" inverseEntity="Tenant"/>
+    </entity>
+    <entity name="Payment" representedClassName="Payment" syncable="YES" codeGenerationType="class">
+        <attribute name="amount" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="dueDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="fraudIndicators" optional="YES" attributeType="String"/>
+        <attribute name="fraudRiskScore" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="isLate" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="lateDays" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="notes" optional="YES" attributeType="String"/>
+        <attribute name="paymentDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="paymentMethod" optional="YES" attributeType="String"/>
+        <attribute name="status" optional="YES" attributeType="String"/>
+        <attribute name="transactionID" optional="YES" attributeType="String"/>
+        <attribute name="unusualPatternDetected" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <relationship name="tenant" optional="YES" minCount="0" maxCount="1" deletionRule="Nullify" destinationEntity="Tenant" inverseName="payments" inverseEntity="Tenant"/>
+    </entity>
+    <entity name="Property" representedClassName="Property" syncable="YES" codeGenerationType="class">
+        <attribute name="address" optional="YES" attributeType="String"/>
+        <attribute name="amenities" optional="YES" attributeType="String"/>
+        <attribute name="city" optional="YES" attributeType="String"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="propertyType" optional="YES" attributeType="String"/>
+        <attribute name="state" optional="YES" attributeType="String"/>
+        <attribute name="totalSquareFeet" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="yearBuilt" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="zipCode" optional="YES" attributeType="String"/>
+        <relationship name="maintenanceLogs" optional="YES" minCount="0" maxCount="0" deletionRule="Nullify" destinationEntity="MaintenanceLog" inverseName="property" inverseEntity="MaintenanceLog" toMany="YES"/>
+        <relationship name="units" optional="YES" minCount="0" maxCount="0" deletionRule="Nullify" destinationEntity="Unit" inverseName="property" inverseEntity="Unit" toMany="YES"/>
+    </entity>
+    <entity name="Tenant" representedClassName="Tenant" syncable="YES" codeGenerationType="class">
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="email" optional="YES" attributeType="String"/>
+        <attribute name="emergencyContact" optional="YES" attributeType="String"/>
+        <attribute name="emergencyPhone" optional="YES" attributeType="String"/>
+        <attribute name="employmentStatus" optional="YES" attributeType="String"/>
+        <attribute name="firstName" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="lastCommunicationSentiment" optional="YES" attributeType="String"/>
+        <attribute name="lastName" optional="YES" attributeType="String"/>
+        <attribute name="leaseEndDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="monthlyIncome" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="monthlyRent" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="moveInDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="moveOutProbability" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="phone" optional="YES" attributeType="String"/>
+        <attribute name="reliabilityScore" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="riskScore" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="satisfactionMetricsJSON" optional="YES" attributeType="String"/>
+        <attribute name="satisfactionScore" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="securityDeposit" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="documents" optional="YES" minCount="0" maxCount="0" deletionRule="Nullify" destinationEntity="Document" inverseName="tenant" inverseEntity="Document" toMany="YES"/>
+        <relationship name="maintenanceRequests" optional="YES" minCount="0" maxCount="0" deletionRule="Nullify" destinationEntity="MaintenanceRequest" inverseName="tenant" inverseEntity="MaintenanceRequest" toMany="YES"/>
+        <relationship name="messages" optional="YES" minCount="0" maxCount="0" deletionRule="Nullify" destinationEntity="Message" inverseName="tenant" inverseEntity="Message" toMany="YES"/>
+        <relationship name="payments" optional="YES" minCount="0" maxCount="0" deletionRule="Nullify" destinationEntity="Payment" inverseName="tenant" inverseEntity="Payment" toMany="YES"/>
+        <relationship name="unit" optional="YES" minCount="0" maxCount="1" deletionRule="Nullify" destinationEntity="Unit" inverseName="currentTenant" inverseEntity="Unit"/>
+    </entity>
+    <entity name="Unit" representedClassName="Unit" syncable="YES" codeGenerationType="class">
+        <attribute name="bathrooms" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="bedrooms" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="features" optional="YES" attributeType="String"/>
+        <attribute name="floor" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="leaseEndDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="leaseStartDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="monthlyRent" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="squareFeet" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="status" optional="YES" attributeType="String"/>
+        <attribute name="unitNumber" optional="YES" attributeType="String"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="currentTenant" optional="YES" minCount="0" maxCount="1" deletionRule="Nullify" destinationEntity="Tenant" inverseName="unit" inverseEntity="Tenant"/>
+        <relationship name="inspections" optional="YES" minCount="0" maxCount="0" deletionRule="Nullify" destinationEntity="Inspection" inverseName="unit" inverseEntity="Inspection" toMany="YES"/>
+        <relationship name="maintenanceRequests" optional="YES" minCount="0" maxCount="0" deletionRule="Nullify" destinationEntity="MaintenanceRequest" inverseName="unit" inverseEntity="MaintenanceRequest" toMany="YES"/>
+        <relationship name="property" optional="YES" minCount="0" maxCount="1" deletionRule="Nullify" destinationEntity="Property" inverseName="units" inverseEntity="Property"/>
+    </entity>
+    <elements>
+        <element name="Document" positionX="0" positionY="0" width="128" height="1"/>
+        <element name="Inspection" positionX="0" positionY="0" width="128" height="1"/>
+        <element name="MaintenanceLog" positionX="0" positionY="0" width="128" height="1"/>
+        <element name="MaintenanceRequest" positionX="0" positionY="0" width="128" height="1"/>
+        <element name="Message" positionX="0" positionY="0" width="128" height="1"/>
+        <element name="Payment" positionX="0" positionY="0" width="128" height="1"/>
+        <element name="Property" positionX="0" positionY="0" width="128" height="1"/>
+        <element name="Tenant" positionX="0" positionY="0" width="128" height="1"/>
+        <element name="Unit" positionX="0" positionY="0" width="128" height="1"/>
+    </elements>
+</model>
